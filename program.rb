@@ -5,14 +5,14 @@ require_relative 'config.rb'
 require_relative 'controllers/listener_controller.rb'
 
 module ContentfulApplication
-  @config = Config.new
+  $config = Config.new
 
   Contentful::Webhook::Listener::Server.start do |config|
-      config[:port] = @config.webhook["port"]
+      config[:port] = $config.webhook["port"]
       config[:logger] = Logger.new(STDOUT)
       config[:endpoints] = [
         {
-          endpoint: @config.webhook["endpoint"],
+          endpoint: $config.webhook["endpoint"],
           controller: ListenerController,
           timeout: 15
         }

@@ -4,8 +4,8 @@ module ContentfulApplication
   class ListenerMailer < BaseMailer
 
     def initialize(title, body)
-      super
-      @mail['subject'] = @config.email.subject
+      super()
+      @mail['subject'] = $config.email.subject
       @mail['body'] = %{
         #{title}
         #{body}
