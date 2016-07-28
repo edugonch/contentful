@@ -5,8 +5,10 @@ module ContentfulApplication
 
     def initialize(title, body)
       super()
-      @mail['subject'] = $config.email.subject
-      @mail['body'] = %{
+      @mail['from'] = $config.email['from_address']
+      @mail[:to]    = $config.email['to_address']
+      @mail.subject = $config.email['subject']
+      @mail.body = %{
         #{title}
         #{body}
       }

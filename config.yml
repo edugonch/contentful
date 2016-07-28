@@ -1,13 +1,10 @@
 email:
-  method: 'pop3'
-  port: 995
-  user_name: '<user>'
-  password: '<password>'
-  server: 'pop.gmail.com'
-  from_address: '<from_address>'
-  to_address: '<to_address>'
+  method: 'smtp'
+  port: 1025
+  server: 'localhost'
+  from_address: 'from@test.com'
+  to_address: 'to@test.com'
   subject: 'A change was made'
-  ssl: true
 webhook:
   port: 1011
   endpoint: '/listener'

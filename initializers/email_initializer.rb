@@ -4,14 +4,11 @@ module ContentfulApplication
 
   module EmailInitializer
 
-    def self.included(base)
+    def self.extended(base)
       Mail.defaults do 
-        retriever_method base.email["method"].to_s, 
-                                :address    => base.email["endpoint"],
-                                :port       => base.email["port"],
-                                :user_name  => base.email["username"],
-                                :password   => base.email["password"],
-                                :enable_ssl => base.email["ssl"]
+        delivery_method base.email["method"].to_sym, 
+                                :address    => base.email["server"],
+                                :port       => base.email["port"]
       end
     end
 

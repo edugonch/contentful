@@ -5,7 +5,8 @@ module ContentfulApplication
   class ListenerController < Contentful::Webhook::Listener::Controllers::WebhookAware
     def publish
       if webhook.entry?
-        mailer = ListenerMailer.new(webhook.fields.title, webhook.fields.body)
+        puts "webhook.fields #{webhook.fields}"
+        mailer = ListenerMailer.new(webhook.fields["title"]["en-US"], webhook.fields["body"]["en-US"])
         mailer.deliver!
       end
     end
