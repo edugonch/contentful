@@ -5,7 +5,7 @@ module ContentfulApplication
   module YmlLoadAttributes
 
     def configure(yml_file)
-      config = YAML::load(File.open(yml_file))
+      config = YAML::load_file(yml_file)
       parse_config config
     end
 

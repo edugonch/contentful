@@ -1,3 +1,5 @@
+require 'mail'
+
 module ContentfulApplication
   class BaseMailer
 
