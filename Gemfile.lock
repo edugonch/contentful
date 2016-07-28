@@ -1,0 +1,31 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (5.0.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    concurrent-ruby (1.0.2)
+    contentful-webhook-listener (0.2.1)
+    i18n (0.7.0)
+    mail (2.6.4)
+      mime-types (>= 1.16, < 4)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    minitest (5.9.0)
+    thread_safe (0.3.5)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activesupport
+  contentful-webhook-listener
+  mail
+
+BUNDLED WITH
+   1.12.5
